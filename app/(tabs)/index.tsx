@@ -10,11 +10,13 @@ import { Link } from 'expo-router';
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#f3f3f3', dark: '#82a2ac' }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/sweep_logo.png')}
+          style={{
+            width: 200, height: 100, paddingLeft: 250, position: 'absolute',
+          }}
         />
       }>
       <ThemedView style={styles.titleContainer}>
@@ -83,6 +85,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
+    paddingTop: 5,
+    paddingHorizontal: 10,
   },
   stepContainer: {
     gap: 8,
