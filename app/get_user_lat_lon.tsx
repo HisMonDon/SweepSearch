@@ -12,14 +12,3 @@ export async function getUserLatLon() {
 
   return { lat: pos.coords.latitude, lon: pos.coords.longitude };
 }
-export function buildOverpassQuery({ lat, lon, radius, tagKey, tagValue }: { lat: number; lon: number; radius: number; tagKey: string; tagValue: string }) {
-  return `
-[out:json][timeout:25];
-(
-  node(around:${radius},${lat},${lon})["${tagKey}"="${tagValue}"];
-  way(around:${radius},${lat},${lon})["${tagKey}"="${tagValue}"];
-  relation(around:${radius},${lat},${lon})["${tagKey}"="${tagValue}"];
-);
-out center 300;
-`;
-}
